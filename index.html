@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Grid Demo</title>
+
+<style>
+    body {
+        background: #1f1f1f;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 40px 0;
+        text-align: center;
+        color: white;
+    }
+
+    h1 {
+        margin-bottom: 40px;
+        font-size: 48px;
+        font-weight: bold;
+        text-align:center;
+    }
+
+    .container {
+        width: 1000px;
+        height:600px;
+        margin : auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .frame {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    }
+
+    .topbar {
+        background: #e6e6e6;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        gap: 6px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .re { background: #ff6f61; }   /* red/coral */
+    .or{ background:#ff7f50;opacity:0.9;}  /*orange*/
+    .lor {background:#ffab52; }   /*light orange*/
+    .gr { background: #06ab8a; }   /* green */
+    .lgr { background: #43c4ab; }/*light green*/
+    .llgr { background: #4fe3c7;}    /* light blue */
+
+    .layout {
+        padding: 10px;
+        display: grid;
+        gap: 8px;
+        height: 130px;    
+    }
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <!-- 1 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class="dot re"></div><div class="dot gr"></div>
+        </div>
+        <div class="layout" style="grid-template-columns: repeat(3,1fr); grid-template-rows: 1fr 1fr;">
+            <div class="re"></div><div class="or"></div><div class="lor"></div>
+            <div class="gr"></div><div class="lgr"></div><div class="llgr"></div>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class=" dot re"></div><div class="dot gr"></div>
+        </div>
+        <div class="layout" style="grid-template-columns:repeat(3,1fr); grid-template-rows: 1fr 1fr;">
+            <div class="re" style="grid-column:span 2;" ></div>
+            <div class="lor" style="grid-row:span 2;"></div>
+            <div class="gr" style="width:90px;"></div><div class="lgr"></div>
+            
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class="dot re"></div><div class="dot gr"></div>
+        </div>
+        <div class="layout" style="grid-template-columns: 1fr 2fr; grid-template-rows: 1fr 1fr 1fr;">
+            <div class="lor" style="grid-column: 1/3;"></div>
+            <div class="gr" style="width:70px; height:60px;"></div>
+            <div class="re" style="width:220px" ></div>
+            <div class="lgr" style="grid-column: 1/3;"></div>
+        </div>
+    </div>
+
+    <!-- 4 -->
+
+    <div class="frame">
+
+        <div class="topbar">
+
+            <div class="dot re"></div><div class="dot gr"></div>
+
+        </div>
+
+        <div class="layout" style="grid-template-columns:1fr 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;">
+        <div class="or" style="grid-column: span 2;"></div>
+        <div class="re" style="grid-column: span 2;" ></div>
+        <div class="gr" style="width:100px;height: 70px;"></div>
+        <div class="lgr" style="grid-column: span 3;"></div>
+        <div class="lor" style="grid-column: span 4;"></div>
+        </div>
+
+    </div>
+
+    <!-- 5 (mosaic) -->
+  <div class="frame">
+
+        <div class="topbar">
+
+            <div class="dot re"></div><div class="dot gr"></div>
+
+        </div>
+
+        <div class="layout" style="grid-template-columns: repeat(6,1fr); grid-template-rows: repeat(3,1fr);">
+
+            <div class="gr"></div><div class="or"></div><div class="lgr"></div><div class="re"></div><div class="llgr"></div><div class="or"></div>
+
+            <div class="lor"></div><div class="gr"></div><div class="or"></div><div class="lgr"></div><div class="lor"></div><div class="re"></div>
+
+            <div class="gr"></div><div class="re"></div><div class="llgr"></div><div class="or"></div><div class="gr"></div><div class="llgr"></div>
+
+        </div>
+
+    </div>
+
+    <!-- 6 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class="dot re"></div><div class="dot gr"></div>
+        </div>
+
+        <div class="layout" style="grid-template-columns:repeat(4,1fr); grid-template-rows: 1fr  1fr 1fr 1fr 1fr;">
+
+          <div class="re" style="grid-column: span 2;"></div>
+            <div class="gr"></div>
+            <div class="lor"></div>
+            <div class="or"></div>
+            <div class="gr"></div>
+            <div class="lgr"></div>
+             <div class="null"></div> 
+             <div class="lor" style="grid-column: span 2;grid-row: span 2;"></div>
+           <div class="lgr"></div>
+            <div class="re"></div>
+             <div class="gr"></div>
+             <div class="null"></div>
+             <div class="llgr" style="grid-column: span 3;"></div>
+            <div class="lor"></div>
+            <div style="display:grid; gap:8px;">
+                
+            </div>
+            
+        
+         
+        </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class="dot re"></div><div class="dot gr"></div>
+        </div>
+        <div class="layout" style="grid-template-columns: 1fr 1fr;">
+            <div class="lor" style="grid-column:1/2; width:140px; height:40px"></div>
+             <div class="llgr" style=" grid-column:3/2; width:138px; height:40px;"></div>
+            <div class="re" style="grid-row:span1/3; height:90px; width:138px;"></div>
+            <div style="display:grid; gap:8px;">
+                <div class="gr" style="grid-row:1/3; height:90px; width:138px"></div>
+               
+                </div>        
+        </div>
+    </div>
+    <!-- 8 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class="dot re"></div><div class="dot gr"></div>
+        </div>
+        <div class="layout" style="grid-template-columns: repeat(5,1fr); grid-template-rows: 1fr 1fr 1fr;">
+            <div class="re"></div><div class="lor"></div><div class="llgr"></div><div class="lgr"></div><div class="gr"></div>
+            <div class="lor"></div><div class="re"></div><div class="or" style="grid-column: span 3;"></div>
+            <div class="llgr" style="grid-column: 1/6;"></div>
+        </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="frame">
+        <div class="topbar">
+            <div class="dot re"></div><div class="dot gr"></div>
+        </div>
+        <div class="layout" style="grid-template-columns:repeat(3,1fr); grid-template-rows: 1fr, 1fr, 1fr, ;">
+             <div class="lor" style="grid-column: 1/4;"></div>
+               <div class="gr" style="grid-row:span 2;"></div>
+                <div class="llgr" style="grid-column:span 2;"></div>
+               <div class="re"></div>        
+                <div class="lor"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <h1>CSS Grid</h1>
+
+</body>
+</html>
